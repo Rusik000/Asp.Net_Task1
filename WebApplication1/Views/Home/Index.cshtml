@@ -1,0 +1,86 @@
+﻿@model WebApplication1.Models.MenuListViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-left: 100px;
+        }
+
+        .menu {
+            width: 45%;
+            height: 10vh;
+            margin-left: 150px;
+            border: 2px solid black;
+            margin-top:20px;
+            position:relative;
+        }
+
+        p {
+            float: left;
+            margin: auto;
+            margin-right: 100px;
+            margin-left: 50px;
+            margin-top: 30px;
+            font-size: 1.8em;
+        }
+
+        img {
+            height: 90px;
+            width: 200px;
+            position:absolute;
+            right:10px;
+            margin-top:5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Drinks</h1>
+    @foreach (var d in Model.Drinks)
+    {
+        <div class="menu">
+            <p>@d.Id</p>
+            <p>@d.Name</p>
+            <img src=@d.ImagePath>
+        </div>
+    }
+    <hr>
+    <h1>HotMeals</h1>
+    @foreach (var h in Model.HotMeals)
+    {
+        <div class="menu">
+            <p>@h.Id</p>
+            <p>@h.Name</p>
+            <img src=@h.ImagePath>
+        </div>
+    }
+    <hr>
+    <h1>FastFood</h1>
+    @foreach (var f in Model.FastFoods)
+    {
+        <div class="menu">
+            <p>@f.Id</p>
+            <p>@f.Name</p>
+            <img src=@f.ImagePath>
+        </div>
+    }
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication1.Entities.HotMeal>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HotMeals</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-left: 100px;
+        }
+
+        .menu {
+            width: 45%;
+            height: 10vh;
+            margin-left: 150px;
+            border: 2px solid blue;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        p {
+            float: left;
+            margin: auto;
+            margin-right: 100px;
+            margin-left: 50px;
+            margin-top: 30px;
+            font-size: 1.8em;
+        }
+
+        img {
+            height: 90px;
+            width: 200px;
+            position: absolute;
+            right: 10px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hot Meals</h1>
+    @foreach (var h in Model)
+    {
+        <div class="menu">
+            <p>@h.Id</p>
+            <p>@h.Name</p>
+            <img src=@h.ImagePath>
+        </div>
+    }
+    <hr>
+
+</body>
+</html>
